@@ -12,9 +12,9 @@ namespace StanDysków.Models
         public string Serwer { get; set; }
         public string Wolumen { get; set; }
         public double Rozmiar { get; set; }
-        public double Wolna_przestrzeń { get; set; }
-        public double Zajeta_przestrzeń { get; set; }
+        public double Wolna_przestrzen { get; set; }
+        public double Zajeta_przestrzen { get; set; }
         public double Procent_wolnej { get; set; }
-        public DateTime Data { get; set; }
+        public string Data { get; set; }
     }
 }

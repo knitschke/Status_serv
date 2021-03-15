@@ -1,9 +1,5 @@
 ﻿using EAGetMail;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using StanDysków.Models;
 using System.Text.RegularExpressions;
 
@@ -22,8 +18,8 @@ namespace StanDysków
                 {
                     double x = -1;
                     double y = -1;
-                    string xx = parsed[j].Replace('.', ',');
-                    string yy = parsed[j + 1].Replace('.', ',');
+                    string xx = parsed[j].Replace(',', '.');
+                    string yy = parsed[j + 1].Replace(',', '.');
                     string name = parsed[j - 2].Replace('<',' ').Replace('>',' ').Replace('/',' ').Trim();
                     foreach (string str in xx.Split(' '))
                     {
@@ -54,8 +50,8 @@ namespace StanDysków
                 {
                     double x = -1;
                     double y = -1;
-                    string xx = parsed[j].Replace('.', ',');
-                    string yy = parsed[j + 1].Replace('.', ',');
+                    string xx = parsed[j].Replace(',', '.');
+                    string yy = parsed[j + 1].Replace(',', '.');
                     foreach (string str in xx.Split(' '))
                     {
                         if (Double.TryParse(str, out x) == true)
@@ -78,17 +74,12 @@ namespace StanDysków
         {
             int ii = 0;
             MailServer oServer = new MailServer("smtp.office365.com",
-                        login,//"krzysztof.nitschke@powiat.poznan.pl",
+                        login,
                         haslo,
                         ServerProtocol.Pop3);
 
-            // Enable SSL/TLS connection, most modern email server require SSL/TLS by default
             oServer.SSLConnection = true;
             oServer.Port = 995;
-
-            // if your server doesn't support SSL/TLS, please use the following codes
-            // oServer.SSLConnection = false;
-            // oServer.Port = 110;
 
             MailClient oClient = new MailClient("TryIt");
             oClient.Connect(oServer);
@@ -107,19 +98,13 @@ namespace StanDysków
                     // Generate an unqiue email file name based on date time.
                     if (oMail.From.ToString() == "<app1@admin.powiat.poznan.pl>")
                     {
-                        //fileName = "win" + oMail.ReceivedDate.ToString().Replace(".", "_").Replace(" ", "_").Replace(":", "_");
                         parseDataWindows(oMail.HtmlBody.ToString(), ref ii, oMail.SentDate);
                     }
                     else
                     {
-                        //fileName = "lin" + oMail.ReceivedDate.ToString().Replace(".", "_").Replace(" ", "_").Replace(":", "_");
                         parseDataLinux(oMail.HtmlBody.ToString(), ref ii, oMail.SentDate);
                     }
-
-                    //string fullPath = string.Format("{0}\\{1}", localInbox, fileName);
-                    //fileName = _generateFileName(i + 1);
-                    // Save email to local disk
-                    //oMail.SaveAs(fullPath+".html", true);
+                    
 
                     Console.WriteLine("Saved");
                 }

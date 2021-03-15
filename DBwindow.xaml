@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StanDysków"
         mc:Ignorable="d"
-        Title="DBwindow" Height="450" Width="900">
+        Title="DBwindow" Height="550" Width="900">
     <Grid Margin="0,0,0,0">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -23,16 +23,29 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="8"/>
         </Grid.RowDefinitions>
-        <DataGrid Name="Data_grid" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="3" MinHeight="100" MinWidth="100" HorizontalAlignment="Center"  VerticalAlignment="Center" />
-        <Button Content="Windows" Grid.Column="1" HorizontalAlignment="Left" Margin="73,8,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button Content="Linux" Grid.Column="1" HorizontalAlignment="Left" Margin="196,8,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="Button1_Click"/>
+        <DataGrid Name="Data_grid" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="3" MinHeight="250" MinWidth="400" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+        <Button Content="Windows" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left"   VerticalAlignment="Top" MinHeight="30" MinWidth="130" Click="Button_Click"/>
+        <Button Content="Linux" Grid.Column="2" HorizontalAlignment="Right"  Grid.Row="1" VerticalAlignment="Top" MinHeight="30" MinWidth="130" Click="Button1_Click"/>
+        <Label Content="Serwer:" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top"/>
+        <TextBox Name="Serv_filter" Grid.Column="1" HorizontalAlignment="Center" MinHeight="30" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" MinWidth="150" TextChanged="Serv_filter_TextChanged"/>
+
+        <Label Content="Wolumen:" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top"/>
+        <TextBox Name="Wolumen_filter" Grid.Column="2" HorizontalAlignment="Center" MinHeight="30" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" MinWidth="150" TextChanged="Wolumen_filter_TextChanged"/>
+
+        <Label Content=">= % zajęty:" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top"/>
+        <TextBox Name="Zajetosc_filter" Grid.Column="3" HorizontalAlignment="Center" MinHeight="30" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" MinWidth="150" TextChanged="Zajetosc_filter_TextChanged"/>
+        <Label Content="Zakres dat:" Grid.Column="1" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Top"/>
+        <TextBox Name="Date_range1" Grid.Column="2" HorizontalAlignment="Center" MinHeight="30" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" MinWidth="150" TextChanged="Date_range1_TextChanged"/>
+        <Label Content="---" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="20"/>
+        <TextBox Name="Date_range2" Grid.Column="3" HorizontalAlignment="Center" MinHeight="30" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" MinWidth="150" TextChanged="Date_range2_TextChanged"/>
+
 
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StanDysków"
         mc:Ignorable="d"
-        Title="StanDysków" Height="350" Width="300" WindowStartupLocation="CenterScreen">
+        Title="StanSerw" Height="350" Width="300" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,0,0">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -30,9 +30,9 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="8"/>
         </Grid.RowDefinitions>
-        <Button x:Name="Scan" MinWidth="100" Grid.Row="5" Content="Skanuj" Grid.Column="2" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Click="Scan_Click"/>
+        <Button x:Name="Scan" MinWidth="100" Grid.ColumnSpan="3" Grid.Row="5" Content="Skanuj" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Click="Scan_Click"/>
         <TextBox x:Name="Mail" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Text="x.y@powiat.poznan.pl"/>
-        <Button x:Name="Database" MinWidth="100" Grid.Row="6" Content="Baza Danych" Grid.Column="1" HorizontalAlignment="Left" Margin="88,22,0,23" VerticalAlignment="Center" Grid.ColumnSpan="3" Click="Database_Click" />
+        <Button x:Name="Database" MinWidth="100" Grid.Row="6" Content="Baza Danych" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Click="Database_Click" />
         <PasswordBox x:Name="Pswd" MinWidth="100" Grid.ColumnSpan="3"  Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" />
         <Label Content="Email:" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center"/>
         <Label Content="Hasło:" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center"/>
